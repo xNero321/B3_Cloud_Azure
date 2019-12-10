@@ -6,6 +6,8 @@ Technical documentation for Azure Deployment
 - Azure Deploiment by **Template**
 - Azure Deploiment by **Container**
 - Azure Deploiment by **Services**
+  - using **SQL Database**
+  - using **MySQL Database**
 
 # Preconditions
 [Download](https://fr.wordpress.org/download/) a WordPress archive.
@@ -30,7 +32,7 @@ Search for **WordPress** and click on **Create**.
 
 **Re-use** your App Service Plan or Create a new one (make sure you're using the **F1 free** *tariff level*).
 
-**Create** the MySQL Database with a name, a username, and a password.
+**Create** the MySQL Database with a name, the admin user informations and a password.
 
 Go to ***YourWordpressName*.azurewebsites.net** and it should be working!
 
@@ -50,3 +52,10 @@ Using a FTP Client (I'm using FileZila), **copy** all the WordPress's files from
 
 Go to ***YourAppServiceName*.azurewebsites.net**. WordPress is working but it need a Database.
 
+## Using SQL Database
+
+Create a **SQL Database**
+
+**Complete** it with your Ressource Group and a name.
+
+**Create** a server with a name and the admin user informations.
