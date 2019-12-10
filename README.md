@@ -6,8 +6,9 @@ Technical documentation for Azure Deployment
 - Azure Deploiment by **Template**
 - Azure Deploiment by **Container**
 - Azure Deploiment by **Services**
-  - using **SQL Database**
-  - using **MySQL Database**
+  - Using **SQL Database**
+  - Using **MySQL Database**
+  - **Connect** WordPress and the Database
 
 # Preconditions
 [Download](https://fr.wordpress.org/download/) a WordPress archive.
@@ -59,3 +60,23 @@ Create a **SQL Database**
 **Complete** it with your Ressource Group and a name.
 
 **Create** a server with a name and the admin user informations.
+
+Your SQL Database is ready.
+
+## Using MySQL Database
+
+Create a **Azure server for MySQL database**
+
+**Complete** it with your ressource group, a name, the admin user informations and the server configuration (it's the server configuration that will be the most expensive).
+
+Look for *security of the connection* in the control panel of the Azure server for MySQL database and clikc on **add a client IP address**. This will allow your PC to connect to the Database. Then, **add a new rule** with the IP address of your Database (I created a rule allowing all connections since it is only a tutorial).
+
+Use MySQL Workbench to **connect to your database**. You'll find all the informations of conexion into the *properties* section of the control panel of the Azure server for MySQL database. Once you're connected, **create** a new diagram.
+
+Your MySQL Database is ready.
+
+## Connect WordPress and the Database
+
+Return to ***YourAppServiceName*.azurewebsites.net** and complete the informations of your Database.
+
+That's it, your WordPress is running!
