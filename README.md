@@ -14,7 +14,7 @@ Technical documentation for Azure Deployment
 [Download](https://fr.wordpress.org/download/) a WordPress archive.
 
 Create a free Azure account to get free credits.
-![Creating free Azure account](https://github.com/xNero321/B3_Cloud_Azure.git/assets/prerequis/create_free)
+![Creating free Azure account](https://uskinned.net/media/1331/02.jpg)
 
 Go to the main page and create a **Ressource Group**.
 
