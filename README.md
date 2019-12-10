@@ -9,7 +9,7 @@ Technical documentation for Azure Deployment
 
 # Preconditions
 Create a free Azure account to get free credits.
-![Creating free Azure account](B3_Cloud_Azure/assets/prerequis/create_free)
+![Creating free Azure account](https://github.com/xNero321/B3_Cloud_Azure.git/assets/prerequis/create_free)
 
 
 
