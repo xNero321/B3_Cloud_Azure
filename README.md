@@ -8,6 +8,8 @@ Technical documentation for Azure Deployment
 - Azure Deploiment by **Services**
 
 # Preconditions
+[Download](https://fr.wordpress.org/download/) a WordPress archive.
+
 Create a free Azure account to get free credits.
 ![Creating free Azure account](https://github.com/xNero321/B3_Cloud_Azure.git/assets/prerequis/create_free)
 
@@ -37,3 +39,14 @@ Don't forget to **delete the MySQL Database** in order to keep your credits!
 # Azure deploiment by Container
 
 # Azure deploiment by Services
+
+Create an **App Service**
+
+**Complete** it with your Ressource Group, a name and your Plan App Service.
+
+In your App Service, look for the **Deploiment Center**. You will find all the information in order to connect to it by **FTP**.
+
+Using a FTP Client (I'm using FileZila), **copy** all the WordPress's files from the archive to the *wwwroot* folder of your App Service.
+
+Go to ***YourAppServiceName*.azurewebsites.net**. WordPress is working but it need a Database.
+
