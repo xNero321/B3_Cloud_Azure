@@ -14,15 +14,25 @@ Technical documentation for Azure Deployment
 [Download](https://fr.wordpress.org/download/) a WordPress archive.
 
 Create a free Azure account to get free credits.
-![Creating free Azure account](https://uskinned.net/media/1331/02.jpg)
+
+![Creating free Azure account](/assets/prerequis/create_free.jpg)
 
 Go to the main page and create a **Ressource Group**.
 
+![Creating ressource group](/assets/prerequis/2-Creer_groupe_ressource.PNG)
+
 **Complete** this ressource group with a name (for the *region*, we will always use **Western Europe** because some services are not available according to the regions).
+
+![Completing ressource group](/assets/prerequis/4-completer_groupe_ressource.PNG)
 
 Create an **App Service Plan**.
 
+![Creating App Service Plan](/assets/prerequis/6-creer_plan_app_service.PNG)
+
 **Complete it** with the Ressource Group and a name and then **Deploy** it.
+
+![Completing App Service Plan](/assets/prerequis/7-completer_plan_1.PNG)
+![Completing App Service Plan2](/assets/prerequis/7-completer_plan_2.PNG)
 
 # Azure Deploiment by Template
 Create a **New Resource**.
