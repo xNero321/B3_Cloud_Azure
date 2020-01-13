@@ -225,6 +225,7 @@ Geo-redundant storage with read access (RA-GRS): replication at hundreds of kilo
 ## Cloud service: what is the use of the Cloud service?
 
 ## Virtual network: why two networks (virtual network and subnet)?
+One is used for inter-VM communication and the other for communication with the internet
 
 ## Endpoints (NSG): describe in detail the purpose and operation of NSG
 Network Security Group:
@@ -266,6 +267,7 @@ https://docs.microsoft.com/fr-fr/azure/virtual-machines/windows/capture-image-re
 Go to "All services", "Subscriptions", "Access control (IAM)", "Check access" and there you can manage the Azure users who have the right to modify your VMs.
 
 ## How do I add a data disk to a VM? Why not use the already existing disc?
+https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/virtual-machines/windows/attach-managed-disk-portal.md
 
 ## Describe the different types of disk sources
 Data disk: Store application data or other data that you need to keep.
@@ -273,3 +275,4 @@ Operating system disk: contains the boot volume.
 Temporary disk: short-term storage for applications and processes, and is intended to store only data such as paging or swap files.
 
 ## How to set up the HA of a VM?
+https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-availability-sets
