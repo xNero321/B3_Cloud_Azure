@@ -245,16 +245,22 @@ It stores diagnostic logs in a blob container named $ logs
 ## Decline and describe the 3 VM availability options
 
 ## What type of virtual machine generation to choose currently in Azure?
+2nd generation VMs.
 
 ## Describe the use of labels when creating a VM
 
 ## How to connect a VM?
 
 ## How to configure a static IP on a VM?
+With Azure PowerShell:
+Stop-AzureVM -Name [VM_Name]
+$VM = Get-AzureVM -ServiceName [VM_ServiceName] -Name [VM_Name]
+Set-AzureStaticVNetIP -VM $VM -IPAddress [IP_Address] | Update-AzureVM
 
 ## In the VM, can we configure the network (check the config with ipconfig)?
 
 ## Is it possible to create an image of the VM and generalize it (Sysprep)?
+https://docs.microsoft.com/fr-fr/azure/virtual-machines/windows/capture-image-resource
 
 ## Test and describe the takeover of the VM (IAM) from Azure AD users
 Go to "All services", "Subscriptions", "Access control (IAM)", "Check access" and there you can manage the Azure users who have the right to modify your VMs.
@@ -262,5 +268,8 @@ Go to "All services", "Subscriptions", "Access control (IAM)", "Check access" an
 ## How do I add a data disk to a VM? Why not use the already existing disc?
 
 ## Describe the different types of disk sources
+Data disk: Store application data or other data that you need to keep.
+Operating system disk: contains the boot volume.
+Temporary disk: short-term storage for applications and processes, and is intended to store only data such as paging or swap files.
 
 ## How to set up the HA of a VM?
