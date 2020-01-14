@@ -116,7 +116,7 @@ Observe that you didn't have to enter a password. That's because the connection 
 
 Since Docker-compose 3.0 is not supported, you must use a docker-compose or dockerfile below this version.
 
-Once you have your dockerfile/Dockercompose file done you can run it on the VM.
+Once your yml file completed just simply run the command : `docker-compose up` you can also add a `-d` at the end of the command to run it in the background.
 
 ## Azure deploiment by Services
 
