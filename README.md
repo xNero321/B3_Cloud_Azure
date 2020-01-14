@@ -2,6 +2,7 @@
 Technical documentation for Azure Deployment
 
 ## Summary
+### Part 1: Azure deploiment
 - Preconditions
 - Azure Deploiment by **Template**
 - Azure Deploiment by **Container**
@@ -9,8 +10,10 @@ Technical documentation for Azure Deployment
   - Using **SQL Database**
   - Using **MySQL Database**
   - **Connect** WordPress and the Database
+### Part 2: VM creation
 
-# Preconditions
+# Part 1: Azure deploiment
+## Preconditions
 [Download](https://fr.wordpress.org/download/) a WordPress archive.
 
 Create a free Azure account to get free credits.
@@ -34,7 +37,7 @@ Create an **App Service Plan**.
 ![Completing App Service Plan](/assets/prerequis/7-completer_plan_1.PNG)
 ![Completing App Service Plan2](/assets/prerequis/7-completer_plan_2.PNG)
 
-# Azure Deploiment by Template
+## Azure Deploiment by Template
 Create a **New Resource**.
 
 ![Creating new resource](/assets/WPwTemplate/1-creer.PNG)
@@ -63,7 +66,7 @@ Go to ***YourWordpressName*.azurewebsites.net** and it should be working!
 
 Don't forget to **delete the MySQL Database** in order to keep your credits!
 
-# Azure deploiment by Container
+## Azure deploiment by Container
 
 Create a ressource called **Container service**
 
@@ -115,7 +118,7 @@ Since Docker-compose 3.0 is not supported, you must use a docker-compose or dock
 
 Once you have your dockerfile/Dockercompose file done you can run it on the VM.
 
-# Azure deploiment by Services
+## Azure deploiment by Services
 
 Create an **App Service**
 
@@ -139,7 +142,7 @@ Go to ***YourAppServiceName*.azurewebsites.net**. WordPress is working but it ne
 
 ![Working without db](/assets/WPwBDD/14-test_sans_db.PNG)
 
-## Using SQL Database
+### Using SQL Database
 
 Create a **SQL Database**
 
@@ -157,7 +160,7 @@ Create a **SQL Database**
 
 Your SQL Database is ready.
 
-## Using MySQL Database
+### Using MySQL Database
 
 Create a **Azure server for MySQL database**
 
@@ -193,3 +196,83 @@ That's it, your WordPress is running!
 
 ![Working](/assets/prerequis/21-izoké.PNG)
 ![Working2](/assets/prerequis/21-izoké_2.PNG)
+
+# Part 2: VM creation
+
+## What is the difference between a creation of VM Classique or with Resource manager?
+Classic -> we have to configure everything
+Resource Manager -> Possibility of having a pre-defined configuration
+
+## Are the VM profiles identical according to the location chosen (describe the possibilities for the two types of VM provisioning: Classic and Resource Manager)?
+No, in some cases only the price changes, in others we cannot create a vm, no profile is available (ex: France). Other cases: United Arab Emirates: your subscription does not take the creation of a vm.
+
+## In the context of the lab, define what is the least expensive profile?
+B1ls 6.15 usa east
+
+## What are the constraints in the choice of geographic location?
+The farther the data center, the more travel and therefore the possible latency
+
+## What is the purpose of the VMS disk storage account?
+Can store different types of files: blobs, tables, queues, files...
+
+## Replication, LRS / GRS / RA-GRS: describe the differences
+Locally redundant storage (LRS): three replicates in the same place
+Geo-redundant storage (GRS): replication hundreds of kilometers away
+Geo-redundant storage with read access (RA-GRS): replication at hundreds of kilometers + remote read access
+
+## By changing replication, is there a difference in cost?
+
+## Cloud service: what is the use of the Cloud service?
+
+## Virtual network: why two networks (virtual network and subnet)?
+One is used for inter-VM communication and the other for communication with the internet
+
+## Endpoints (NSG): describe in detail the purpose and operation of NSG
+Network Security Group:
+Contains the number of rules desired. Each rule includes:
+Last name
+Priority: between 100 and 4096, processed in ascending order
+Source or destination: all, IP address, CIDR ...
+Protocol: TCP, UDP, ICMP ...
+Direction: enter or exit
+Action: Allow or deny
+
+## Activate during the creation of the VM the startup and operating system diagnostics, then describe their usefulness
+Lets find out why a VM enters a non-bootable state thanks to console outputs or screenshots.
+
+## Diagnostic storage account: what is it for?
+It stores diagnostic logs in a blob container named $ logs
+
+## Decline and describe the 3 VM availability options
+
+## What type of virtual machine generation to choose currently in Azure?
+2nd generation VMs.
+
+## Describe the use of labels when creating a VM
+
+## How to connect a VM?
+
+## How to configure a static IP on a VM?
+With Azure PowerShell:
+Stop-AzureVM -Name [VM_Name]
+$VM = Get-AzureVM -ServiceName [VM_ServiceName] -Name [VM_Name]
+Set-AzureStaticVNetIP -VM $VM -IPAddress [IP_Address] | Update-AzureVM
+
+## In the VM, can we configure the network (check the config with ipconfig)?
+
+## Is it possible to create an image of the VM and generalize it (Sysprep)?
+https://docs.microsoft.com/fr-fr/azure/virtual-machines/windows/capture-image-resource
+
+## Test and describe the takeover of the VM (IAM) from Azure AD users
+Go to "All services", "Subscriptions", "Access control (IAM)", "Check access" and there you can manage the Azure users who have the right to modify your VMs.
+
+## How do I add a data disk to a VM? Why not use the already existing disc?
+https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/virtual-machines/windows/attach-managed-disk-portal.md
+
+## Describe the different types of disk sources
+Data disk: Store application data or other data that you need to keep.
+Operating system disk: contains the boot volume.
+Temporary disk: short-term storage for applications and processes, and is intended to store only data such as paging or swap files.
+
+## How to set up the HA of a VM?
+https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-availability-sets
