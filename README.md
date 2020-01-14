@@ -70,7 +70,7 @@ Don't forget to **delete the MySQL Database** in order to keep your credits!
 
 Create a ressource called **Container service**
 
-![Create App service](/assets/WPwDocker/Create.PNG)
+![Create App service](/assets/WPwDocker/Create.png)
 
 Then fill the master configuration field:
 
