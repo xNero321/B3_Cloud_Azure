@@ -221,6 +221,7 @@ Geo-redundant storage (GRS): replication hundreds of kilometers away
 Geo-redundant storage with read access (RA-GRS): replication at hundreds of kilometers + remote read access
 
 ## By changing replication, is there a difference in cost?
+Since the cost is due to the ressources usage if the replicas is not used at the same time. There will be no increase of the original price.
 
 ## Cloud service: what is the use of the Cloud service?
 
@@ -249,8 +250,10 @@ It stores diagnostic logs in a blob container named $ logs
 2nd generation VMs.
 
 ## Describe the use of labels when creating a VM
+Labels are used to identify a VM and also used as parameters for auto deployment scripts.
 
 ## How to connect a VM?
+One way is using PuTTy with the public address of the VM via SSH, you must inquire your SSH-public key to the labels in order to connect via SSH.
 
 ## How to configure a static IP on a VM?
 With Azure PowerShell:
@@ -259,6 +262,7 @@ $VM = Get-AzureVM -ServiceName [VM_ServiceName] -Name [VM_Name]
 Set-AzureStaticVNetIP -VM $VM -IPAddress [IP_Address] | Update-AzureVM
 
 ## In the VM, can we configure the network (check the config with ipconfig)?
+A network is already build by Azure when the VM is created there is only one NIC used and to create another one you muse use a total different method.
 
 ## Is it possible to create an image of the VM and generalize it (Sysprep)?
 https://docs.microsoft.com/fr-fr/azure/virtual-machines/windows/capture-image-resource
